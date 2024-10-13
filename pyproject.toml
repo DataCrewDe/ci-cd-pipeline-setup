@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ci-cd-pipeline-setup"
+version = "0.1.0"  # This can be updated from version.py during build
+description = "A sample CI/CD pipeline setup for Python projects."
+authors = [
+    { name = "Areeba Rauf", email = "areebarauf96@outlook.com" }
+]
+license = { text = "MIT" }
+dependencies = [
+    # Add your runtime dependencies here
+]
+
+[tool.setuptools]
+include-package-data = true
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "--cov=src --cov-report=term-missing --cov-report=xml"
+testpaths = ["tests"]  # Specify the test directory
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "flake8",
+    "twine",
+]

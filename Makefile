@@ -10,11 +10,11 @@ install:
 
 # Run tests
 test:
-	$(PYTHON) -m pytest --cov=my_package tests/
+	$(PYTHON) -m pytest --cov=ci-cd-pipeline-setup src/tests/
 
 # Lint code
 lint:
-	$(PYTHON) -m flake8 my_package
+	$(PYTHON) -m flake8 src/
 
 # Build the package
 build: clean

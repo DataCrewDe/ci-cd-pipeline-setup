@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+# Runtime dependencies
+requests = "*"
+
+[dev-packages]
+# Development dependencies
+pytest = "*"
+pytest-cov = "*"
+flake8 = "*"
+twine = "*"
+
+[requires]
+python_version = "3.9"  # Specify your Python version
