@@ -22,8 +22,7 @@ build: clean
 
 # Upload the package to PyPI
 upload:
-	$(PYTHON) -m twine upload dist/*
-
+	@$(TWINE) upload dist/* --username $(shell grep -A 1 '\[pypi\]' $(PYPI_RC) | grep 'username' | cut -d'=' -f2 | tr -d ' ') --password $(shell grep -A 1 '\[pypi\]' $(PYPI_RC) | grep 'password' | cut -d'=' -f2 | tr -d ' ')
 # Clean up build artifacts
 clean:
 	rm -rf build dist *.egg-info
